@@ -1,8 +1,8 @@
 const TelegramBot = require("node-telegram-bot-api")
 const { getForecast } = require('./api/forecast') 
 
-const TOKEN_BOT = '5721202389:AAGEtCh1RYkBe5QXwa6bUyKbLinw4si7Zhs'
-const TOKEN_WEATHER = '45631440f0fe2be12473b931beeb7aa7'
+const TOKEN_BOT = 'BOT FATHER TOKEN'
+const TOKEN_WEATHER = 'OPENWEATHERMAP API KEY'
 const CITY = 'Kharkiv'
 
 
