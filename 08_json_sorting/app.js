@@ -6,6 +6,9 @@ const keyToFind = "isDone"
 
 
 async function main() {
+    trueValues = 0
+    falseValues = 0
+
     for(index in api_list){
         let isDone = undefined
         let success = false
@@ -15,6 +18,10 @@ async function main() {
                 if(response.ok) {
                     json = await response.json()
                     isDone = await startSearching(json, keyToFind)
+                    if(isDone)
+                        trueValues++
+                    else if(isDone === false)
+                        falseValues++
                     success = true
                     break;
                 }
@@ -27,7 +34,8 @@ async function main() {
         else {
             console.log(`[Fail] ${api_list[index]}: The endpoint is unavailable`)
         }
-    };
+    }
+    console.log(`\nFound True values: ${trueValues},\nFound False values: ${falseValues}`)
 }
 
 main()
